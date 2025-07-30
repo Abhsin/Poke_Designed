@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke - API Keys</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Custom Title Bar -->
+        <div class="title-bar">
+            <div class="title-bar-left">
+                <div class="brand-icon">
+                    <div class="brand-logo">
+                        <img src="assets/Logo.svg" alt="Poke Logo" width="26" height="29">
+                    </div>
+                    <span class="brand-text">Poke</span>
+                </div>
+            </div>
+            <div class="title-bar-right">
+                <button class="title-bar-button" id="minimizeBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 8H14" stroke="#f4fffd" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="title-bar-button" id="maximizeBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <rect x="3" y="3" width="10" height="10" stroke="#f4fffd" stroke-width="2"/>
+                    </svg>
+                </button>
+                <button class="title-bar-button close-btn" id="closeBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M12 4L4 12M4 4L12 12" stroke="#f4fffd" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="api-keys-container">
+                <!-- Header -->
+                <div class="api-keys-header">
+                    <h2 class="api-keys-title">Select the API Keys you have access to</h2>
+                </div>
+                
+                <!-- API Key Options -->
+                <div class="api-keys-options">
+                    <!-- Gemini API Key -->
+                    <div class="api-key-option">
+                        <div class="api-key-icon">
+                            <img src="assets/gemini-color 1.svg" alt="Gemini API" width="48" height="48">
+                        </div>
+                        <div class="api-key-input-container">
+                            <input type="password" class="api-key-input" placeholder="Enter the API Key here" id="geminiKey">
+                        </div>
+                    </div>
+
+                    <!-- OpenAI API Key -->
+                    <div class="api-key-option">
+                        <div class="api-key-icon">
+                            <img src="assets/openai 1.svg" alt="OpenAI API" width="48" height="48">
+                        </div>
+                        <div class="api-key-input-container">
+                            <input type="password" class="api-key-input" placeholder="Enter the API Key here" id="openaiKey">
+                        </div>
+                    </div>
+
+                    <!-- Or Divider -->
+                    <div class="or-divider">
+                        <span class="or-text">Or</span>
+                    </div>
+
+                    <!-- Ollama Connect -->
+                    <div class="ollama-option">
+                        <div class="api-key-icon">
+                            <img src="assets/ollama 1.svg" alt="Ollama" width="48" height="48">
+                        </div>
+                        <button class="ollama-connect-btn" id="connectOllamaBtn">
+                            <span class="ollama-text">Connect Ollama ↗</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Continue Button -->
+                <div class="continue-section">
+                    <button class="continue-button" id="continueBtn">
+                        <span class="continue-text">Continue</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="api-keys-renderer.js"></script>
+</body>
+</html> 

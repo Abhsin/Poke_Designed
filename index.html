@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Custom Title Bar -->
+        <div class="title-bar">
+            <div class="title-bar-left">
+                <div class="brand-icon">
+                    <div class="brand-logo">
+                        <img src="assets/Logo.svg" alt="Poke Logo" width="26" height="29">
+                    </div>
+                    <span class="brand-text">Poke</span>
+                </div>
+            </div>
+            <div class="title-bar-right">
+                <button class="title-bar-button" id="minimizeBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 8H14" stroke="#f4fffd" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="title-bar-button" id="maximizeBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <rect x="3" y="3" width="10" height="10" stroke="#f4fffd" stroke-width="2"/>
+                    </svg>
+                </button>
+                <button class="title-bar-button close-btn" id="closeBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M12 4L4 12M4 4L12 12" stroke="#f4fffd" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="signup-container">
+                <div class="brand-section">
+                    <div class="brand-mark">
+                        <div class="logo-container">
+                            <img src="assets/Logo.svg" alt="Poke Logo" width="60" height="68">
+                        </div>
+                        <h1 class="brand-title">Poke</h1>
+                    </div>
+                </div>
+                
+                <div class="button-section">
+                    <button class="start-button" id="startBtn">
+                        <span class="button-text">Start</span>
+                        <div class="button-icon">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <circle cx="18" cy="18" r="18" fill="#f4fffd" fill-opacity="0.1"/>
+                                <path d="M12 18L24 18M24 18L18 12M24 18L18 24" stroke="#f4fffd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html> 
