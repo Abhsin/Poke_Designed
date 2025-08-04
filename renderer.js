@@ -1,16 +1,14 @@
-const { ipcRenderer } = require('electron');
-
-// Window control functions using ipcRenderer
+// Window control functions using secure API
 function minimizeWindow() {
-    ipcRenderer.send('window-control', 'minimize');
+    window.electronAPI.minimizeWindow();
 }
 
 function maximizeWindow() {
-    ipcRenderer.send('window-control', 'maximize');
+    window.electronAPI.maximizeWindow();
 }
 
 function closeWindow() {
-    ipcRenderer.send('window-control', 'close');
+    window.electronAPI.closeWindow();
 }
 
 // Window control buttons
@@ -34,12 +32,16 @@ document.getElementById('startBtn').addEventListener('click', () => {
     window.location.href = 'api-keys.html';
 });
 
-// Notification function
+// Notification function with improved security
 function showNotification(title, message) {
+    // Sanitize inputs
+    title = window.electronAPI.escapeHtml(title || '');
+    message = window.electronAPI.escapeHtml(message || '');
+    
     if (Notification.permission === 'granted') {
         new Notification(title, { body: message });
     } else if (Notification.permission !== 'denied') {
-        Notification.requestPermission().then(permission => {
+        window.electronAPI.requestNotificationPermission().then(permission => {
             if (permission === 'granted') {
                 new Notification(title, { body: message });
             }
@@ -56,12 +58,12 @@ document.addEventListener('keydown', (event) => {
     
     // F11 to toggle fullscreen
     if (event.key === 'F11') {
-        ipcRenderer.send('window-control', 'toggle-fullscreen');
+        window.electronAPI.toggleFullscreen();
     }
     
     // Escape to exit fullscreen
     if (event.key === 'Escape') {
-        ipcRenderer.send('window-control', 'exit-fullscreen');
+        window.electronAPI.exitFullscreen();
     }
 });
 
